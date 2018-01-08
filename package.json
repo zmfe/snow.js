@@ -1,0 +1,50 @@
+{
+  "name": "snow.js",
+  "version": "1.0.0",
+  "description": "a javascript library for snowing",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src/js --fix",
+    "test": "npm run lint",
+    "clean": "rm -rf dist",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "postcss src/css/snow.css --use autoprefixer -o dist/snow.css --no-map",
+    "build:js": "rollup -c",
+    "compress": "npm run compress:css && npm run compress:js",
+    "compress:css": "postcss dist/snow.css -u cssnano -o dist/snow.min.css --no-map",
+    "compress:js": "uglifyjs dist/snow.js -o dist/snow.min.js -c -m --comments /^!/",
+    "publish":"npm run clean && npm run build && npm run compress"
+  },
+  "keywords": [
+    "snow",
+    "Javascript",
+    "components",
+    "css",
+    "html",
+    "parcel"
+  ],
+  "author": "Trees",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-runtime": "^6.26.0",
+    "cssnano": "^3.10.0",
+    "eslint": "^4.13.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "postcss-cli": "^4.1.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-custom-selectors": "^4.0.1",
+    "postcss-header": "^1.0.0",
+    "postcss-url": "^7.3.0",
+    "rollup": "^0.52.1",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-watch": "^4.3.1",
+    "uglify-js": "^3.2.2"
+  },
+  "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.23.0"
+  }
+}

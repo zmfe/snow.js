@@ -1,0 +1,25 @@
+{
+    "extends": "airbnb-base",
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 8,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "modules": true,
+            "experimentalObjectRestSpread": true
+        }
+    },
+    "rules": {
+      "indent": [2, "tab"],
+      "no-tabs": 0,
+      "no-new": 0,
+      "no-param-reassign": "off",
+      "quote-props": "off",
+      "valid-jsdoc": ["error", {
+        "requireReturn": false
+      }]
+    }
+}

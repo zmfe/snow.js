@@ -1,0 +1,22 @@
+* {
+    margin:0;
+    padding:0;
+}
+ul {
+    list-style:none;
+}
+/* not work
+#pure-input-result-list {
+    cursor: pointer;
+    .active,&:hover {
+        color: #ffffff;
+        background: #007fff;
+    }
+} */
+#pure-input-result li {
+    cursor: pointer;
+}
+#pure-input-result li.active, #pure-input-result li:hover {
+    color: #ffffff;
+    background: #007fff;
+}
