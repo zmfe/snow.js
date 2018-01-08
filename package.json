@@ -1,7 +1,7 @@
 {
   "name": "snow.js",
   "version": "1.0.0",
-  "description": "a javascript library for snowing",
+  "description": "a javascript library for snowing by canvas",
   "main": "index.js",
   "scripts": {
     "lint": "eslint src/js --fix",
@@ -18,10 +18,7 @@
   "keywords": [
     "snow",
     "Javascript",
-    "components",
-    "css",
-    "html",
-    "parcel"
+    "canvas"
   ],
   "author": "Trees",
   "license": "MIT",

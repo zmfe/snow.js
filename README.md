@@ -1,5 +1,4 @@
-# prue.js
-one input component like Baidu or google by pure Javascript with no dependencies
-
+# snow.js
+a javascript library for snowing by canvas
 ## License
 The content is available under MIT license.
