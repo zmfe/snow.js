@@ -20,6 +20,7 @@
     "Javascript",
     "canvas"
   ],
+  "repository": "https://github.com/zmfe/snow.js",
   "author": "Trees",
   "license": "MIT",
   "dependencies": {

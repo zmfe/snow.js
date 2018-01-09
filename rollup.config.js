@@ -3,7 +3,7 @@ const pkg = require('./package');
 
 const now = new Date();
 const banner = `/*!
-* Pure.js v${pkg.version}
+* Snow.js v${pkg.version}
 * ${pkg.repository}
 *
 * Copyright (c) ${now.getFullYear()} ${pkg.author.name}

@@ -12,8 +12,36 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="description" content="snow-js">
         <link rel="stylesheet" href="../dist/snow.min.css">
+        <style>
+            html, body { 
+                width:100%; 
+                height:100%;
+            }
+            #snow {
+                position:relative;
+                width:100%;
+                height:100%;
+                background:rebeccapurple;
+            }
+            canvas {
+                position:absolote;
+                top:0;
+                left:0;
+                background:rgba(0,0,0,0);
+            }
+        </style>
     </head>
     <body>
         <div id="snow"></div>
+        <script src="../dist/snow.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                new Snow('#snow',{
+                    number:30,
+                    r: 2.5,
+                    v: 1.8
+                });
+            });
+        </script>
     </body>
 </html>
