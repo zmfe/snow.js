@@ -5,7 +5,7 @@
 * Copyright (c) 2018 undefined
 * Released under the MIT license
 *
-* Date: 2018-01-10T02:40:40.358Z
+* Date: 2018-01-10T02:46:17.730Z
 */
 
 (function (global, factory) {
@@ -179,7 +179,7 @@ var Snow = function () {
 			var canvas = document.createElement('canvas');
 			canvas.width = width;
 			canvas.height = height;
-			canvas.style = 'position:absolote;top:0;left:0;background:rgba(0,0,0,0);';
+			canvas.style = 'position:absolute;top:0;left:0;background:rgba(0,0,0,0);';
 			element.appendChild(canvas);
 			this.canvas = canvas;
 			this.ctx = canvas.getContext('2d');
