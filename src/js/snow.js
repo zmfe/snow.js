@@ -84,6 +84,7 @@ class Snow {
 		const canvas = document.createElement('canvas');
 		canvas.width = width;
 		canvas.height = height;
+		canvas.style = 'position:absolote;top:0;left:0;background:rgba(0,0,0,0);';
 		element.appendChild(canvas);
 		this.canvas = canvas;
 		this.ctx = canvas.getContext('2d');

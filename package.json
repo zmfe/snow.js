@@ -2,7 +2,7 @@
   "name": "snow.js",
   "version": "1.0.0",
   "description": "a javascript library for snowing by canvas",
-  "main": "index.js",
+  "main": "dist/snow.min.js",
   "scripts": {
     "lint": "eslint src/js --fix",
     "test": "npm run lint",
