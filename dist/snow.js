@@ -5,7 +5,7 @@
 * Copyright (c) 2018 undefined
 * Released under the MIT license
 *
-* Date: 2018-01-10T02:46:17.730Z
+* Date: 2018-01-10T02:49:28.283Z
 */
 
 (function (global, factory) {
