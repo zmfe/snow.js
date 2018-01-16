@@ -5,7 +5,7 @@
 * Copyright (c) 2018 undefined
 * Released under the MIT license
 *
-* Date: 2018-01-10T03:01:10.014Z
+* Date: 2018-01-16T06:57:19.956Z
 */
 
 (function (global, factory) {
@@ -37,11 +37,11 @@ function SINDEG(deg) {
 	return deg;
 }
 function COSDEG(deg) {
-	// if (deg > DEG(75) && deg <= DEG(90)) {
-	// 	deg -= (Math.PI / 8);
-	// } else if (deg > DEG(90) && deg <= DEG(165)) {
-	// 	deg += (Math.PI / 8);
-	// }
+	if (deg > DEG(15) && deg <= DEG(90)) {
+		deg -= Math.PI / 6;
+	} else if (deg > DEG(90) && deg <= DEG(165)) {
+		deg += Math.PI / 6;
+	}
 	return deg;
 }
 
@@ -88,13 +88,13 @@ var SnowParticle = function () {
 		    r = _option.r,
 		    v = _option.v;
 
-		this.color = color.replace('rgb', 'rgba').split(')')[0] + ',' + (Math.floor(Math.random() * 70) + 30) / 100 + ')';
+		this.color = color.replace('rgb', 'rgba').split(')')[0] + ',' + (Math.floor(Math.random() * 50) + 50) / 100 + ')';
 		this.content = content;
 		this.r = r * (Math.random() * 0.4 + 0.6);
 		this.x = x;
 		this.y = y;
 		this.v = v;
-		this.angle = Math.PI * Math.random() + 0.01;
+		this.angle = Math.PI * Math.random();
 		// this.init();
 	}
 	// init() {
@@ -123,12 +123,12 @@ var SnowParticle = function () {
 			    width = _option2.width,
 			    height = _option2.height;
 
-			this.x += this.v * (Math.cos(COSDEG(this.angle)) * 0.5);
+			this.x += this.v * Math.cos(COSDEG(this.angle)) * 0.3;
 			this.y += this.v * Math.sin(SINDEG(this.angle));
 			if (this.y > height || this.x > width || this.x < 0) {
 				this.y = 0;
 				this.x = Math.random() * width;
-				this.angle = Math.PI * Math.random() + 0.01;
+				this.angle = Math.PI * Math.random();
 			}
 		}
 	}]);
@@ -179,7 +179,7 @@ var Snow = function () {
 			var canvas = document.createElement('canvas');
 			canvas.width = width;
 			canvas.height = height;
-			canvas.style.cssText = 'position:absolute;top:0;left:0;background:rgba(0,0,0,0);pointer-events:none;';
+			canvas.style.cssText = 'position:absolute;top:0;left:0;background:rgba(0,0,0,0);pointer-events:none;z-index:1;';
 			element.appendChild(canvas);
 			this.canvas = canvas;
 			this.ctx = canvas.getContext('2d');
@@ -203,7 +203,7 @@ var Snow = function () {
 					y: Math.random() * height,
 					x: Math.random() * width,
 					r: r,
-					v: Math.random() * v,
+					v: v,
 					width: this.width,
 					height: this.height
 					// angle: Math.PI,

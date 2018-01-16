@@ -17,13 +17,13 @@ class SnowParticle {
 		const {
 			content, color, x, y, r, v,
 		} = this.option;
-		this.color = `${color.replace('rgb', 'rgba').split(')')[0]},${(Math.floor(Math.random() * 70) + 30) / 100})`;
+		this.color = `${color.replace('rgb', 'rgba').split(')')[0]},${(Math.floor(Math.random() * 50) + 50) / 100})`;
 		this.content = content;
 		this.r = r * (((Math.random() * 0.4) + 0.6));
 		this.x = x;
 		this.y = y;
 		this.v = v;
-		this.angle = (Math.PI * Math.random()) + 0.01;
+		this.angle = (Math.PI * Math.random());
 		// this.init();
 	}
 	// init() {
@@ -42,12 +42,12 @@ class SnowParticle {
 		const {
 			width, height,
 		} = this.option;
-		this.x += this.v * (Math.cos(COSDEG(this.angle)) * 0.5);
+		this.x += this.v * (Math.cos(COSDEG(this.angle))) * 0.3;
 		this.y += this.v * (Math.sin(SINDEG(this.angle)));
 		if (this.y > height || this.x > width || this.x < 0) {
 			this.y = 0;
 			this.x = Math.random() * width;
-			this.angle = (Math.PI * Math.random()) + 0.01;
+			this.angle = (Math.PI * Math.random());
 		}
 	}
 }
@@ -84,7 +84,7 @@ class Snow {
 		const canvas = document.createElement('canvas');
 		canvas.width = width;
 		canvas.height = height;
-		canvas.style.cssText = 'position:absolute;top:0;left:0;background:rgba(0,0,0,0);pointer-events:none;';
+		canvas.style.cssText = 'position:absolute;top:0;left:0;background:rgba(0,0,0,0);pointer-events:none;z-index:1;';
 		element.appendChild(canvas);
 		this.canvas = canvas;
 		this.ctx = canvas.getContext('2d');
@@ -101,7 +101,7 @@ class Snow {
 				y: Math.random() * height,
 				x: Math.random() * width,
 				r,
-				v: Math.random() * v,
+				v,
 				width: this.width,
 				height: this.height,
 				// angle: Math.PI,

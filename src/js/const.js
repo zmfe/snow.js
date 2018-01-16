@@ -21,10 +21,10 @@ export function SINDEG(deg) {
 	return deg;
 }
 export function COSDEG(deg) {
-	// if (deg > DEG(75) && deg <= DEG(90)) {
-	// 	deg -= (Math.PI / 8);
-	// } else if (deg > DEG(90) && deg <= DEG(165)) {
-	// 	deg += (Math.PI / 8);
-	// }
+	if (deg > DEG(15) && deg <= DEG(90)) {
+		deg -= (Math.PI / 6);
+	} else if (deg > DEG(90) && deg <= DEG(165)) {
+		deg += (Math.PI / 6);
+	}
 	return deg;
 }
