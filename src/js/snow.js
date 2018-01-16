@@ -33,7 +33,7 @@ class SnowParticle {
 			content, color, x, y, r,
 		} = this;
 		content.beginPath();
-		content.arc(x, y, r, 0, 2 * Math.PI, true);
+		content.arc(Math.floor(x), Math.floor(y), r, 0, 2 * Math.PI, true);
 		content.closePath();
 		content.fillStyle = color;
 		content.fill();
@@ -98,8 +98,8 @@ class Snow {
 			const particle = new SnowParticle({
 				color: 'rgb(255,255,255)',
 				content: ctx,
-				y: Math.random() * height,
-				x: Math.random() * width,
+				y: Math.floor(Math.random() * height),
+				x: Math.floor(Math.random() * width),
 				r,
 				v,
 				width: this.width,

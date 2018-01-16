@@ -5,7 +5,7 @@
 * Copyright (c) 2018 undefined
 * Released under the MIT license
 *
-* Date: 2018-01-16T06:57:19.956Z
+* Date: 2018-01-16T11:55:01.675Z
 */
 
 (function (global, factory) {
@@ -111,7 +111,7 @@ var SnowParticle = function () {
 			    r = this.r;
 
 			content.beginPath();
-			content.arc(x, y, r, 0, 2 * Math.PI, true);
+			content.arc(Math.floor(x), Math.floor(y), r, 0, 2 * Math.PI, true);
 			content.closePath();
 			content.fillStyle = color;
 			content.fill();
@@ -200,8 +200,8 @@ var Snow = function () {
 				var particle = new SnowParticle({
 					color: 'rgb(255,255,255)',
 					content: ctx,
-					y: Math.random() * height,
-					x: Math.random() * width,
+					y: Math.floor(Math.random() * height),
+					x: Math.floor(Math.random() * width),
 					r: r,
 					v: v,
 					width: this.width,
